@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+   <script>
+       var scheduleArr = [1,2,3,4,5];
+       function schedule(lectures){
+           this.lectures = lectures;
+       }
+       schedule.prototype.display = function(){                                
+           var str = " ";
+           for(var i = 0;i < this.lectures.length;i++){
+                str += this.lectures[i].display + '';
+
+           }
+           return str;
+       }
+       var scheduleOne = new schedule(scheduleArr);
+       console.log(scheduleOne.display())
+
+
+   </script>
+</body>
+</html>

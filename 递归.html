@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var data = [{id:1,child:[{id:3},{id:5,child:[{id:7}]},]},{id:2,child:[{id:4}]}]
+    var newarr =[]
+    function recursion() {
+        var queue = [data]
+        var item
+        while (item = queue.shift()) {
+            item.forEach(i => {
+                newarr.push(i.id)
+                i.child && queue.push(i.child)
+
+            })
+
+        }
+    }
+    recursion()
+    console.log(newarr)
+
+
+</script>
+
+</body>
+</html>
